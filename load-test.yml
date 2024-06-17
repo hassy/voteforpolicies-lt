@@ -1,0 +1,17 @@
+config:
+  target: "https://voteforpolicies.org.uk"
+  phases:
+    - arrivalRate: 1
+      duration: 10
+  engines:
+    playwright:
+      launchOptions:
+        headless: false
+      traces:
+        enabled: true
+  processor: ./test-functions.mjs
+
+scenarios:
+  - engine: playwright
+    name: Basic exploration
+    testFunction: basicExploration
